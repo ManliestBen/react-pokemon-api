@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { getAllPokemon } from './services/pokemon-api';
 import PokemonPage from './pages/PokemonPage/PokemonPage';
 
@@ -23,7 +23,6 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">Pokemon Index</header>
-        <Switch>
         <Route exact path='/' render={() => 
             <section>
               {this.state.pokemon.map((pokemon, idx) => 
@@ -42,7 +41,6 @@ class App extends Component {
               getPokemon={this.getPokemon}
             />
           }/>
-          </Switch>
       </div>
     )
   }
